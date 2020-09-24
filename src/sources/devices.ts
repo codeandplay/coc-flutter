@@ -25,7 +25,7 @@ export default class DevicesList implements IList {
         if (Array.isArray(item)) {
           return;
         }
-        commands.executeCommand(`flutter.run`, '-d', item.data!.deviceId);
+        commands.executeCommand(`flutter.run`, '-d', item.data!.deviceId, '--host-vmservice-port', '9000', '--disable-service-auth-codes', 'test_driver/app.dart');
       },
     });
   }
